@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Messenger — Chat</title>
+  <link rel="stylesheet" href="../Style/chat.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Messenger</div>
+    <div class="top-actions">
+      <button id="darkToggle" class="icon-btn" title="Toggle dark mode">Light/Dark</button>
+      <button id="logoutBtn" class="btn small">Logout</button>
+    </div>
+  </header>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="profile">
+       <div class="avatar" id="sidebarAvatar">
+  👤
+  <span id="deleteProfilePhoto" class="delete-photo">&times;</span>
+</div>
+
+        <div class="profile-info">
+          <div id="meName" class="name">Name</div>
+          <div id="meStatus" class="status">Status</div>
+        </div>
+      </div>
+
+      <div class="search">
+        <input id="contactSearch" type="text" placeholder="Search contacts...">
+      </div>
+
+      <div class="contacts" id="contactsList">
+  
+      </div>
+    </aside>
+
+    <section class="chat-window">
+      <div class="chat-header">
+        <div class="chat-meta">
+          <div id="chatName">Select a contact</div>
+          <div id="chatStatus" class="small muted">—</div>
+        </div>
+        <div class="chat-controls">
+          <button id="callBtn" class="icon-btn" title="Call">Audio </button>
+          <button id="videoBtn" class="icon-btn" title="Video">Video </button>
+        </div>
+      </div>
+
+      <div id="messages" class="messages" aria-live="polite">
+      </div>
+
+      <form id="messageForm" class="composer">
+        <input id="messageInput" type="text" placeholder="Type a message..." autocomplete="off">
+        <label class="file-label">
+          📎
+          <input id="fileInput" type="file" hidden>
+        </label>
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </section>
+  </div>
+  <!-- Profile Modal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>My Profile</h2>
+    <div class="profile-preview">
+      <img id="profileImagePreview" src="https://via.placeholder.com/100" alt="Profile Image">
+    </div>
+    <input type="file" id="profileImageInput" accept="image/*">
+    <div class="profile-info">
+      <p>Name: <span id="profileName">Your Name</span></p>
+      <p>Status: <span id="profileStatus">Online</span></p>
+    </div>
+    <button id="saveProfile" class="btn primary">Save</button>
+  </div>
+</div>
+
+
+  <script src="../js/chat.js"></script>
+</body>
+</html>

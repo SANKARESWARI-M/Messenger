@@ -1,0 +1,280 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: block; 
+  width: 100%;
+  height: 100%;
+}
+
+.split-container {
+  display: flex;
+  height: 100vh;
+  width: 100%; 
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  min-width: 0; 
+}
+
+.right-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --accent: #0b5fff;
+  --text: #0f1724;
+}
+
+body.dark {
+  --bg: #0b1220;
+  --panel: #081221;
+  --muted: #9aa4b2;
+  --accent: #6fa9ff;
+  --text: #e6eef8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--bg);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 360px;
+  background: var(--panel);
+  padding: 32px 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.login-box h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.login-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #0044cc;
+}
+
+.btn {
+  background: #e5e7eb;
+}
+
+.btn:hover {
+  background: #d1d5db;
+}
+
+.small {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.vis-label {
+  position: absolute;
+  left: -9999px;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    max-width: 90%;
+    padding: 24px 20px;
+  }
+
+  .login-box h1 {
+    font-size: 20px;
+  }
+}
+
+
+.split-container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.branding {
+  max-width: 400px;
+  text-align: center;
+}
+
+.branding h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.branding .tagline {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 340px;
+  padding: 36px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  background: #fff;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 6px;
+  font-size: 1.5rem;
+  color: #0b1220;
+}
+
+.login-box .subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-box input:focus {
+  border-color: #0b5fff;
+}
+
+.login-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn.primary {
+  background: #0b5fff;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #004de0;
+}
+
+.btn {
+  background: #e5e7eb;
+}
+
+.btn:hover {
+  background: #d1d5db;
+}
+
+
+@media (max-width: 800px) {
+  .split-container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    height: 40vh;
+  }
+
+  .right-panel {
+    height: 60vh;
+  }
+
+  .branding h1 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,394 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+:root {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --accent: #0b5fff;
+  --user: #0b84ff;
+  --other: #e6e6e6;
+  --text: #0f1724;
+
+  /* Buttons & Inputs */
+  --btn-bg: #e5e7eb;
+  --btn-hover: #d1d5db;
+  --input-bg: transparent;
+  --input-border: rgba(0,0,0,0.06);
+  --hover-bg: rgba(0,0,0,0.03);
+  --border: rgba(0,0,0,0.05);
+  --composer-bg: #ffffff;
+}
+
+body.dark {
+  --bg: #0b1220;
+  --panel: #081221;
+  --muted: #9aa4b2;
+  --accent: #6fa9ff;
+  --user: #6fa9ff;
+  --other: #143041;
+  --text: #e6eef8;
+
+  --btn-bg: #1a1f2b;
+  --btn-hover: #2a3346;
+  --input-bg: transparent;
+  --input-border: #2a3346;
+  --hover-bg: #1a1f2b;
+  --border: #2a3346;
+  --composer-bg: #081221;
+}
+
+
+.topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: var(--panel);
+  box-shadow: 0 1px 0 var(--border);
+  color: var(--text);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  color: var(--text);
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+}
+
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--btn-bg);
+  color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn.small {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+}
+
+
+.app {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+.sidebar {
+  width: 300px;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.profile-info .name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.profile-info .status {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.search input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text);
+  outline: none;
+}
+
+.contacts {
+  overflow-y: auto;
+  flex: 1;
+  margin-top: 4px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.contact-item:hover {
+  background: var(--hover-bg);
+}
+
+.contact-item .name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.contact-item .last {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.contact-meta {
+  margin-left: auto;
+  text-align: right;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+}
+
+.chat-header {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.chat-meta .small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.messages {
+  flex: 1;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  background: var(--bg);
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message .time {
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.message.user {
+  margin-left: auto;
+  background: var(--user);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.message.other {
+  margin-right: auto;
+  background: var(--other);
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+}
+
+
+.composer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  background: var(--composer-bg);
+}
+
+.composer input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  outline: none;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.file-label:hover {
+  background: var(--hover-bg);
+}
+
+.small {
+  font-size: 12px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+
+  .messages {
+    padding: 12px;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+  background: var(--panel);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  color: var(--text);
+}
+
+.modal .close {
+  color: var(--muted);
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: var(--accent);
+}
+
+.profile-preview img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+#profileImageInput {
+  margin-bottom: 12px;
+}
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  cursor: pointer;
+  background-position: center;
+}
+
+.delete-photo {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

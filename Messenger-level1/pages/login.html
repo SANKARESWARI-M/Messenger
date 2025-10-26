@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Messenger — Login</title>
+  <link rel="stylesheet" href="../Style/login.css">
+</head>
+<body>
+  <div class="split-container">
+    <section class="left-panel">
+      <div class="branding">
+        <h1>Internal Messenger</h1>
+        <p class="tagline">Stay connected with your team. Chat & call instantly.</p>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <form id="loginForm" class="login-box" autocomplete="off">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Sign in to continue</p>
+
+        <input id="username" type="text" placeholder="Enter your name" required>
+
+        <input id="password" type="password" 
+          placeholder="Enter password" 
+          required>
+
+        <input id="statusMessage" type="text" placeholder="e.g. Available, In a meeting">
+
+        <div class="login-actions">
+          <button type="submit" class="btn primary">Login</button>
+          <button type="button" id="guestBtn" class="btn">Continue as Guest</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>
